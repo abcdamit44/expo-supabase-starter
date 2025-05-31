@@ -10,7 +10,7 @@ SplashScreen.preventAutoHideAsync();
 type AuthState = {
   initialized: boolean;
   session: Session | null;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string, name?: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
@@ -30,10 +30,17 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const [session, setSession] = useState<Session | null>(null);
   const router = useRouter();
 
-  const signUp = async (email: string, password: string) => {
+  const signUp = async (email: string, password: string, name?: string) => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: name
+        ? {
+            data: {
+              full_name: name,
+            },
+          }
+        : undefined,
     });
 
     if (error) {

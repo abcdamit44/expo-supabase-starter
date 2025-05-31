@@ -19,10 +19,10 @@ export default function WelcomeScreen() {
     <SafeAreaView className="flex flex-1 bg-background p-4">
       <View className="flex flex-1 items-center justify-center gap-y-4 web:m-4">
         <Image source={appIcon} className="w-16 h-16 rounded-xl" />
-        <H1 className="text-center">Welcome to Expo Supabase Starter</H1>
+        <H1 className="text-center">Welcome to Pro Health Coach</H1>
         <Muted className="text-center">
-          A comprehensive starter project for developing React Native and Expo applications with
-          Supabase as the backend.
+          Your AI-powered fitness and wellness companion. Get personalized workout plans, nutrition
+          guidance, and smart health coaching tailored just for you.
         </Muted>
       </View>
       <View className="flex flex-col gap-y-4 web:m-4">
