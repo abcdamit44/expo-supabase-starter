@@ -275,7 +275,12 @@ export default function WorkoutLogger({ onClose, onSave }: WorkoutLoggerProps) {
                           key={exercise}
                           size="sm"
                           variant="outline"
-                          onPress={() => setNewExercise((prev) => ({ ...prev, name: exercise }))}
+                          onPress={() =>
+                            setNewExercise((prev) => ({
+                              ...prev,
+                              name: exercise,
+                            }))
+                          }
                         >
                           <Text>{exercise}</Text>
                         </Button>
@@ -292,7 +297,10 @@ export default function WorkoutLogger({ onClose, onSave }: WorkoutLoggerProps) {
                 <TextInput
                   value={newExercise.sets.toString()}
                   onChangeText={(text) =>
-                    setNewExercise((prev) => ({ ...prev, sets: Number.parseInt(text) || 0 }))
+                    setNewExercise((prev) => ({
+                      ...prev,
+                      sets: Number.parseInt(text) || 0,
+                    }))
                   }
                   keyboardType="numeric"
                   className="border border-border rounded-lg p-2 bg-background text-foreground text-center"
@@ -304,7 +312,10 @@ export default function WorkoutLogger({ onClose, onSave }: WorkoutLoggerProps) {
                 <TextInput
                   value={newExercise.reps.toString()}
                   onChangeText={(text) =>
-                    setNewExercise((prev) => ({ ...prev, reps: Number.parseInt(text) || 0 }))
+                    setNewExercise((prev) => ({
+                      ...prev,
+                      reps: Number.parseInt(text) || 0,
+                    }))
                   }
                   keyboardType="numeric"
                   className="border border-border rounded-lg p-2 bg-background text-foreground text-center"
@@ -317,7 +328,10 @@ export default function WorkoutLogger({ onClose, onSave }: WorkoutLoggerProps) {
                   <TextInput
                     value={newExercise.weight.toString()}
                     onChangeText={(text) =>
-                      setNewExercise((prev) => ({ ...prev, weight: Number.parseFloat(text) || 0 }))
+                      setNewExercise((prev) => ({
+                        ...prev,
+                        weight: Number.parseFloat(text) || 0,
+                      }))
                     }
                     keyboardType="numeric"
                     className="border border-border rounded-lg p-2 bg-background text-foreground text-center"
@@ -331,7 +345,10 @@ export default function WorkoutLogger({ onClose, onSave }: WorkoutLoggerProps) {
                   <TextInput
                     value={newExercise.duration.toString()}
                     onChangeText={(text) =>
-                      setNewExercise((prev) => ({ ...prev, duration: Number.parseInt(text) || 0 }))
+                      setNewExercise((prev) => ({
+                        ...prev,
+                        duration: Number.parseInt(text) || 0,
+                      }))
                     }
                     keyboardType="numeric"
                     className="border border-border rounded-lg p-2 bg-background text-foreground text-center"

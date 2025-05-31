@@ -1,6 +1,5 @@
-import { View } from "react-native";
-
 import { H1, Muted } from "@/components/ui/typography";
+import { View } from "react-native";
 
 export default function NotFound() {
   return (

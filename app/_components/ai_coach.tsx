@@ -140,7 +140,10 @@ export default function AICoach({ onClose }: AICoachProps) {
                     message.role === "user" ? "text-primary-foreground/70" : "text-muted-foreground"
                   }`}
                 >
-                  {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                  {message.timestamp.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
                 </Text>
               </View>
               {message.role === "user" && (

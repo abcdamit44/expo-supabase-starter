@@ -6,13 +6,21 @@ module.exports = {
 	presets: [require("nativewind/preset")],
 	theme: {
 		extend: {
+			fontFamily: {
+				// Headlines (Impactful & Stylish)
+				sora: ["Sora", "sans-serif"],
+				// Body Text (Clean & Friendly)
+				"dm-sans": ["DM Sans", "sans-serif"],
+				// Numbers & Metrics (Strong Visual Presence)
+				"space-grotesk": ["Space Grotesk", "sans-serif"],
+			},
 			colors: {
 				// Custom color scheme
-				'sage-green': '#A8D5BA',
-				'dusty-blue': '#7BAFD4',
-				'off-white': '#F4F6F5',
-				'soft-coral': '#F6B8A3',
-				'charcoal-gray': '#2E2E2E',
+				"sage-green": "#A8D5BA",
+				"dusty-blue": "#7BAFD4",
+				"off-white": "#F4F6F5",
+				"soft-coral": "#F6B8A3",
+				"charcoal-gray": "#2E2E2E",
 				// Shadcn/ui color system
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

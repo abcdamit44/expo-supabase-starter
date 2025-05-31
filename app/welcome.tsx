@@ -6,7 +6,7 @@ import { Logo } from "@/components/logo";
 import { SafeAreaView } from "@/components/safe-area-view";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
-import { H1, Muted } from "@/components/ui/typography";
+import { H1, Lead } from "@/components/ui/typography";
 
 export default function WelcomeScreen() {
   const router = useRouter();
@@ -16,10 +16,10 @@ export default function WelcomeScreen() {
       <View className="flex flex-1 items-center justify-center gap-y-4 web:m-4">
         <Logo size={80} />
         <H1 className="text-center">Welcome to Pro Health Coach</H1>
-        <Muted className="text-center">
+        <Lead className="text-center">
           Your AI-powered fitness and wellness companion. Get personalized workout plans, nutrition
           guidance, and smart health coaching tailored just for you.
-        </Muted>
+        </Lead>
       </View>
       <View className="flex flex-col gap-y-4 web:m-4">
         <Button
