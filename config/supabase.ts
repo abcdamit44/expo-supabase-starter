@@ -1,6 +1,8 @@
-import { AppState } from "react-native";
-
+// Required polyfills for React Native - DO NOT REMOVE
 import "react-native-get-random-values";
+import "react-native-url-polyfill/auto";
+
+import { AppState } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createClient } from "@supabase/supabase-js";
 import * as aesjs from "aes-js";
@@ -65,9 +67,23 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     detectSessionInUrl: false,
   },
+  global: {
+    fetch: (url, options = {}) => {
+      console.log(`🌐 Making request to: ${url}`);
+      return fetch(url, {
+        ...options,
+        headers: {
+          ...options.headers,
+        },
+      }).catch((error) => {
+        console.error(`❌ Network request failed for ${url}:`, error);
+        throw error;
+      });
+    },
+  },
 });
 
-AppState.addEventListener("change", (state) => {
+AppState.addEventListener("change", (state: string) => {
   if (state === "active") {
     supabase.auth.startAutoRefresh();
   } else {

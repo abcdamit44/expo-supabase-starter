@@ -30,7 +30,20 @@
         "dark": "./assets/icon-dark.png",
         "light": "./assets/icon.png"
       },
-      "bundleIdentifier": "com.prohealthcoach.app"
+      "bundleIdentifier": "com.prohealthcoach.app",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false,
+          "NSExceptionDomains": {
+            "supabase.co": {
+              "NSExceptionAllowsInsecureHTTPLoads": false,
+              "NSExceptionMinimumTLSVersion": "1.2",
+              "NSExceptionRequiresForwardSecrecy": true,
+              "NSIncludesSubdomains": true
+            }
+          }
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -46,7 +59,12 @@
           "image": "./assets/splash-dark.png"
         }
       },
-      "package": "com.prohealthcoach.app"
+      "package": "com.prohealthcoach.app",
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ],
+      "usesCleartextTraffic": false
     },
     "experiments": {
       "typedRoutes": true

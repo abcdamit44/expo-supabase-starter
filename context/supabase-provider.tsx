@@ -31,28 +31,40 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const router = useRouter();
 
   const signUp = async (email: string, password: string, name?: string) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: name
-        ? {
-            data: {
-              full_name: name,
-            },
-          }
-        : undefined,
-    });
+    try {
+      console.log("Attempting to sign up with Supabase...");
+      console.log("Supabase URL:", process.env.EXPO_PUBLIC_SUPABASE_URL);
 
-    if (error) {
-      console.error("Error signing up:", error);
-      return;
-    }
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: name
+          ? {
+              data: {
+                full_name: name,
+              },
+            }
+          : undefined,
+      });
 
-    if (data.session) {
-      setSession(data.session);
-      console.log("User signed up:", data.user);
-    } else {
-      console.log("No user returned from sign up");
+      if (error) {
+        console.error("Error signing up:", error);
+        console.error("Error details:", {
+          message: error.message,
+          status: error.status,
+        });
+        throw error;
+      }
+
+      if (data.session) {
+        setSession(data.session);
+        console.log("User signed up successfully:", data.user);
+      } else {
+        console.log("Sign up successful, but email confirmation may be required");
+      }
+    } catch (error) {
+      console.error("Network or unexpected error during sign up:", error);
+      throw error;
     }
   };
 

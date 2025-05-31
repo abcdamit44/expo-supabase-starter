@@ -46,10 +46,31 @@ export default function SignUp() {
   async function onSubmit(data: z.infer<typeof formSchema>) {
     try {
       await signUp(data.email, data.password, data.name);
-
       form.reset();
     } catch (error: unknown) {
-      console.error(error instanceof Error ? error.message : "An error occurred");
+      let errorMessage = "An unexpected error occurred";
+
+      if (error instanceof Error) {
+        if (error.message.includes("Network request failed")) {
+          errorMessage =
+            "Network connection failed. Please check your internet connection and try again.";
+        } else if (error.message.includes("Invalid login credentials")) {
+          errorMessage = "Invalid email or password. Please try again.";
+        } else if (error.message.includes("User already registered")) {
+          errorMessage =
+            "An account with this email already exists. Please try signing in instead.";
+        } else {
+          errorMessage = error.message;
+        }
+      }
+
+      console.error("Sign up error:", errorMessage);
+
+      // Set form error to display to user
+      form.setError("root", {
+        type: "manual",
+        message: errorMessage,
+      });
     }
   }
 
@@ -60,6 +81,13 @@ export default function SignUp() {
           <Logo size={60} />
         </View>
         <H1 className="self-start">Sign Up</H1>
+
+        {form.formState.errors.root && (
+          <View className="bg-destructive/10 border border-destructive rounded-md p-3">
+            <Text className="text-destructive text-sm">{form.formState.errors.root.message}</Text>
+          </View>
+        )}
+
         <Form {...form}>
           <View className="gap-4">
             <FormField
