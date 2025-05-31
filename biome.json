@@ -1,0 +1,86 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noParameterAssign": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "off"
+      },
+      "complexity": {
+        "noForEach": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "attributePosition": "auto"
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "double",
+      "attributePosition": "auto"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 100
+    }
+  },
+  "files": {
+    "include": [
+      "app/**/*",
+      "components/**/*",
+      "config/**/*",
+      "constants/**/*",
+      "context/**/*",
+      "lib/**/*",
+      "scripts/**/*",
+      "*.ts",
+      "*.tsx",
+      "*.js",
+      "*.jsx"
+    ],
+    "ignore": [
+      "node_modules/**/*",
+      "android/**/*",
+      "ios/**/*",
+      ".expo/**/*",
+      ".vscode/**/*",
+      "dist/**/*",
+      "build/**/*",
+      "*.generated.*",
+      "expo-env.d.ts",
+      "nativewind-env.d.ts",
+      "*.json",
+      "*.lock",
+      "*.config.*"
+    ]
+  }
+}

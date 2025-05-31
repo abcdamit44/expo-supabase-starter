@@ -1,0 +1,31 @@
+# Lefthook Configuration
+# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx,json}"
+      run: bun biome check --write {staged_files}
+      stage_fixed: true
+    type-check:
+      glob: "*.{ts,tsx}"
+      run: bun run check-types
+      skip:
+        - merge
+        - rebase
+
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: bun biome check --write
+    type-check:
+      run: bun run check-types
+    test:
+      run: echo "No tests configured yet"
+
+commit-msg:
+  commands:
+    commitlint:
+      run: echo "Commit message validation - add commitlint if needed"

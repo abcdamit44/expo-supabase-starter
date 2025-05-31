@@ -1,0 +1,18 @@
+# Biome ignore patterns
+node_modules/
+.expo/
+.vscode/
+android/
+ios/
+dist/
+build/
+*.generated.*
+expo-env.d.ts
+nativewind-env.d.ts
+.git/
+*.lock
+bun.lock
+package-lock.json
+yarn.lock
+*.json
+*.config.*
