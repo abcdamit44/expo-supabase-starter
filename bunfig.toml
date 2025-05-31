@@ -1,0 +1,22 @@
+# Bun configuration file
+[install]
+# Faster installs
+cache = true
+# Use exact versions for better reproducibility
+exact = true
+# Auto install peer dependencies
+auto = true
+
+[install.lockfile]
+# Save lockfile
+save = true
+# Print verbose output during install
+print = "yarn"
+
+[test]
+# Test configuration
+preload = ["./test-setup.ts"]
+
+[run]
+# Automatically install missing dependencies
+bun = true
