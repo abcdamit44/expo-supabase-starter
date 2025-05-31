@@ -152,7 +152,7 @@ To skip hooks for a single commit:
 # Skip pre-commit hooks
 git commit --no-verify
 
-# Skip pre-push hooks  
+# Skip pre-push hooks
 git push --no-verify
 ```
 
