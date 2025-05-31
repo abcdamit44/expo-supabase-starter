@@ -6,8 +6,20 @@ import * as SecureStore from "expo-secure-store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL as string;
-const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY as string;
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl) {
+	throw new Error(
+		"Missing EXPO_PUBLIC_SUPABASE_URL environment variable. Please check your .env file."
+	);
+}
+
+if (!supabaseAnonKey) {
+	throw new Error(
+		"Missing EXPO_PUBLIC_SUPABASE_ANON_KEY environment variable. Please check your .env file."
+	);
+}
 
 class LargeSecureStore {
 	private async _encrypt(key: string, value: string) {

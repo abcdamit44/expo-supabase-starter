@@ -45,7 +45,8 @@
           "resizeMode": "cover",
           "image": "./assets/splash-dark.png"
         }
-      }
+      },
+      "package": "com.flemingvincent.ExpoSupabaseStarter"
     },
     "experiments": {
       "typedRoutes": true
@@ -53,6 +54,12 @@
     "plugins": [
       "expo-router",
       "expo-secure-store"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b4216477-e631-4f9f-a4bc-a9c3d1cbf34b"
+      }
+    }
   }
 }
