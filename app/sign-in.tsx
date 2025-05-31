@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { ActivityIndicator, View } from "react-native";
 import * as z from "zod";
 
+import { Logo } from "@/components/logo";
 import { SafeAreaView } from "@/components/safe-area-view";
 import { Button } from "@/components/ui/button";
 import { Form, FormField, FormInput } from "@/components/ui/form";
@@ -42,6 +43,9 @@ export default function SignIn() {
   return (
     <SafeAreaView className="flex-1 bg-background p-4" edges={["bottom"]}>
       <View className="flex-1 gap-4 web:m-4">
+        <View className="items-center mb-6">
+          <Logo size={60} />
+        </View>
         <H1 className="self-start ">Sign In</H1>
         <Form {...form}>
           <View className="gap-4">

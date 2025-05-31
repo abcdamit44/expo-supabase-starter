@@ -4,46 +4,48 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 0 0% 14.50%;
-		--card: 0 0% 100%;
-		--card-foreground: 0 0% 14.50%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 0 0% 14.50%;
-		--primary: 0 0% 20.50%;
-		--primary-foreground: 0 0% 98.50%;
-		--secondary: 0 0% 97%;
-		--secondary-foreground: 0 0% 20.50%;
-		--muted: 0 0% 97%;
-		--muted-foreground: 0 0% 55.60%;
-		--accent: 0 0% 97%;
-		--accent-foreground: 0 0% 20.50%;
+		/* Sage Green (#A8D5BA) - Primary */
+		--background: 144 35% 95%; /* Off White (#F4F6F5) - Main background */
+		--foreground: 0 0% 18%; /* Charcoal Gray (#2E2E2E) - Primary text */
+		--card: 144 35% 95%;
+		--card-foreground: 0 0% 18%;
+		--popover: 144 35% 95%;
+		--popover-foreground: 0 0% 18%;
+		--primary: 144 35% 73%; /* Sage Green (#A8D5BA) */
+		--primary-foreground: 0 0% 18%;
+		--secondary: 208 48% 65%; /* Dusty Blue (#7BAFD4) */
+		--secondary-foreground: 0 0% 18%;
+		--muted: 144 35% 90%;
+		--muted-foreground: 0 0% 45%;
+		--accent: 21 67% 81%; /* Soft Coral (#F6B8A3) */
+		--accent-foreground: 0 0% 18%;
 		--destructive: 0 80% 57.70%;
 		--destructive-foreground: 0 0% 100%;
-		--border: 0 0% 92.20%;
-		--input: 0 0% 92.20%;
-		--ring: 0 0% 70.80%;
+		--border: 144 20% 85%;
+		--input: 144 20% 85%;
+		--ring: 144 35% 73%;
 	}
 
 	.dark:root {
-		--background: 240 10% 3.90%;
-		--foreground: 0 0% 98%;
-		--card: 240 10% 3.90%;
-		--card-foreground: 0 0% 98%;
-		--popover: 240 10% 3.90%;
-		--popover-foreground: 0 0% 98%;
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.90% 10%;
-		--secondary: 240 3.70% 15.90%;
-		--secondary-foreground: 0 0% 98%;
-		--muted: 240 3.70% 15.90%;
-		--muted-foreground: 240 5% 64.90%;
-		--accent: 240 3.70% 15.90%;
-		--accent-foreground: 0 0% 98%;
+		/* Dark mode with adjusted versions of the color scheme */
+		--background: 0 0% 12%; /* Dark background */
+		--foreground: 144 35% 90%; /* Light sage for text */
+		--card: 0 0% 15%;
+		--card-foreground: 144 35% 90%;
+		--popover: 0 0% 15%;
+		--popover-foreground: 144 35% 90%;
+		--primary: 144 25% 60%; /* Darker sage green */
+		--primary-foreground: 0 0% 12%;
+		--secondary: 208 35% 50%; /* Darker dusty blue */
+		--secondary-foreground: 144 35% 90%;
+		--muted: 0 0% 20%;
+		--muted-foreground: 144 15% 65%;
+		--accent: 21 55% 70%; /* Darker soft coral */
+		--accent-foreground: 0 0% 12%;
 		--destructive: 0 62.80% 30.60%;
 		--destructive-foreground: 0 85.70% 97.30%;
-		--border: 240 3.70% 15.90%;
-		--input: 240 3.70% 15.90%;
-		--ring: 240 4.90% 83.90%;
+		--border: 0 0% 25%;
+		--input: 0 0% 25%;
+		--ring: 144 25% 60%;
 	}
 }
